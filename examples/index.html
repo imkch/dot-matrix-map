@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>基于Cavans实现可交互的点阵地图</title>
+  </head>
+  <style>
+    html,body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .app {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #map {
+      margin: 60px;
+      width: 100%;
+    }
+    #tooltip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.2);
+      color: #fff;
+      border-radius: 4px;
+      padding: 4px 8px;
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="app">
+      <div id="map"></div>
+      <div id="tooltip"></div>
+    </div>
+    <script src="../dist/index.js"></script>
+    <script>
+      const dotMatrixMap = new DotMatrixMap('map');
+      const tooltip = document.getElementById('tooltip');
+      dotMatrixMap.on('mousemove', (e, data)=> {
+        if (data) {
+          tooltip.innerText = data.name;
+          tooltip.style.display = 'block';
+          tooltip.style.top = e.pageY - tooltip.clientHeight - 10 + 'px';
+          tooltip.style.left = e.pageX - tooltip.clientWidth / 2 + 'px';
+        } else {
+          tooltip.style.display = 'none';
+        }
+      });
+      dotMatrixMap.addMarkDot([
+        {
+          name: '上海',
+          coordinate: [121.48,31.23]
+        },
+        {
+          name: '北京',
+          coordinate: [116.43,39.90]
+        }
+      ]);
+    </script>
+  </body>
+</html>

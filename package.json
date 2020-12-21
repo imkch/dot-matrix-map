@@ -1,0 +1,43 @@
+{
+  "name": "dot-matrix-map",
+  "version": "1.0.0",
+  "description": "基于Cavans实现可交互的点阵地图",
+  "main": "dist/index.min.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "NODE_ENV=production rollup -c",
+    "trans": "node scripts/geometry-to-position"
+  },
+  "homepage": "https://github.com/imkch/dot-matrix-map#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imkch/dot-matrix-map.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imkch/dot-matrix-map/issues"
+  },
+  "keywords": [
+    "点阵地图",
+    "世界地图",
+    "dot-matrix-map",
+    "canvas"
+  ],
+  "author": {
+    "name": "坤尘",
+    "email": "kunchen@imkch.com",
+    "url": "https://imkch.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "rollup": "^2.34.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
