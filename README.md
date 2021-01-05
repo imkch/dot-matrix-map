@@ -9,7 +9,7 @@
 ### 通过NPM安装，import导入
 
 ``` bash
-npm install dot-matrix-map
+npm install --save dot-matrix-map
 ```
 ``` javascript
 import DotMatrixMap from 'dot-matrix-map';
